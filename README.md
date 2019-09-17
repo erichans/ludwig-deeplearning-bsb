@@ -14,7 +14,8 @@ ludwig experiment --experiment_name achados --data_train_csv dados_treino_Achado
 ```
 
 **Exemplo de servir o modelo Tensorflow usando REST:**
-Executar antes a instalação de um utilitário necessário ao ludwig (?): pip install email-validator
+<br/>Executar antes a instalação de um utilitário necessário ao ludwig (?): <br/>
+**```pip install email-validator```**
 
 **MNIST:**
 ```
