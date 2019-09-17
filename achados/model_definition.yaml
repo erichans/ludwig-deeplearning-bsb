@@ -1,0 +1,15 @@
+input_features:
+  -
+    name: ACHADO
+    type: text
+    level: word
+    
+output_features:
+  -
+    name: TIPO_ACHADO
+    type: category
+    top_k: 10
+
+training:
+    validation_measure: accuracy
+    early_stop: 5

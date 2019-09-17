@@ -1,0 +1,4 @@
+*/results/*
+*.json
+*.hdf5
+mnist/mnist_png/
