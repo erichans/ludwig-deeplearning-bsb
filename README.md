@@ -2,7 +2,7 @@
 ```
 pip install https://github.com/uber/ludwig/archive/master.zip
 ```
-Exemplo de expermentação de modelos com o ludwig via linha de comando:
+Exemplo de experimentação de modelos com o ludwig via linha de comando:
 
 **MNIST:**
 ```
