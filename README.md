@@ -7,7 +7,7 @@ MNIST:
 ludwig experiment --experiment_name mnist_base --data_train_csv  mnist_dataset_training.csv --data_test_csv mnist_dataset_testing.csv  --model_definition_file model_definition.yml
 
 ACHADOS:
-ludwig experiment --experiment_name achados --data_train_csv achados-train.csv --data_validation_csv achados-valid.csv -mdf model_definition.yaml
+ludwig experiment --experiment_name achados --data_train_csv dados_treino_Achados.csv --data_validation_csv dados_validacao_Achados.csv --data_test_csv dados_teste_Achados.csv -mdf model_definition.yaml
 
 
 Exemplo de servir o modelo Tensorflow usando REST:
