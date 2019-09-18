@@ -19,11 +19,11 @@ ludwig experiment --experiment_name achados --data_train_csv dados_treino_Achado
 
 **MNIST:**
 ```
-ludwig serve -m results/mnist_base_run_0/model/
+ludwig serve -m results\mnist_base_run_0\model\
 ```
 **ACHADOS:**
 ```
-ludwig serve -m results/achados_run_0/model/
+ludwig serve -m results\achados_run_0\model\
 ```
 **Exemplo de requisição para o modelo para MNIST:**
 ```
@@ -37,38 +37,38 @@ curl http://0.0.0.0:8000/predict -X POST -F 'ACHADO=Inadequação da pesquisa de
 **Exemplos de visualização do Ludwig:**
 
 **Learning Rate Curve:**
-```ludwig visualize --visualization learning_curves --model_names mnist_base_run_0 mnist_base_run_1 --training_statistics results/mnist_base_run_0/training_statistics.json results/mnist_base_run_1/training_statistics.json --field label```
+```ludwig visualize --visualization learning_curves --model_names mnist_base_run_0 mnist_base_run_1 --training_statistics results\mnist_base_run_0\training_statistics.json results\mnist_base_run_1\training_statistics.json --field label```
 
 **Confusion Matrix:**
-```ludwig visualize --visualization confusion_matrix --top_n_classes 10 --test_statistics results/mnist_base_run_0/test_statistics.json --ground_truth_metadata mnist_dataset_training.json```
+```ludwig visualize --visualization confusion_matrix --top_n_classes 10 --test_statistics results\mnist_base_run_0\test_statistics.json --ground_truth_metadata mnist_dataset_training.json```
 
 **Compare Performance:**
-```ludwig visualize --visualization compare_performance --model_names mnist_base_run_0 mnist_base_run_1 --test_statistics results/mnist_base_run_0/test_statistics.json results/mnist_base_run_1/test_statistics.json --field label```
+```ludwig visualize --visualization compare_performance --model_names mnist_base_run_0 mnist_base_run_1 --test_statistics results\mnist_base_run_0\test_statistics.json results\mnist_base_run_1\test_statistics.json --field label```
 
 **Compare Models:**
-```ludwig visualize -v compare_performance -tes results/mnist_base_run_0/test_statistics.json results/mnist_base_run_1/test_statistics.json -mn mnist_base_run_0 mnist_base_run_1 -f label```
+```ludwig visualize -v compare_performance -tes results\mnist_base_run_0\test_statistics.json results\mnist_base_run_1\test_statistics.json -mn mnist_base_run_0 mnist_base_run_1 -f label```
 
 **Compare classifiers performance from probs:**
-```ludwig visualize --visualization compare_classifiers_performance_from_prob --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results/mnist_base_run_0/label_probabilities.csv results/mnist_base_run_1/label_probabilities.csv --test_statistics results/mnist_base_run_0/test_statistics.json results/mnist_base_run_1/test_statistics.json```
+```ludwig visualize --visualization compare_classifiers_performance_from_prob --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results\mnist_base_run_0\label_probabilities.csv results\mnist_base_run_1\label_probabilities.csv --test_statistics results\mnist_base_run_0\test_statistics.json results\mnist_base_run_1\test_statistics.json```
 
 **Compare classifiers performance from preds:**
-```ludwig visualize --visualization compare_classifiers_performance_from_pred --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --ground_truth_metadata mnist_dataset_training.json --predictions results/mnist_base_run_0/label_predictions.npy results/mnist_base_run_1/label_predictions.npy```
+```ludwig visualize --visualization compare_classifiers_performance_from_pred --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --ground_truth_metadata mnist_dataset_training.json --predictions results\mnist_base_run_0\label_predictions.npy results\mnist_base_run_1\label_predictions.npy```
 
 **Compare Classifier Predictions:**
-```ludwig visualize --visualization compare_classifiers_predictions --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --predictions results/mnist_base_run_0/label_predictions.csv results/mnist_base_run_1/label_predictions.csv```
+```ludwig visualize --visualization compare_classifiers_predictions --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --predictions results\mnist_base_run_0\label_predictions.csv results\mnist_base_run_1\label_predictions.csv```
 
 **Compare Classifier Predictions from distributions:**
-```ludwig visualize --visualization compare_classifiers_predictions_distribution --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --predictions results/mnist_base_run_0/label_predictions.npy results/mnist_base_run_1/label_predictions.npy```
+```ludwig visualize --visualization compare_classifiers_predictions_distribution --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --predictions results\mnist_base_run_0\label_predictions.npy results\mnist_base_run_1\label_predictions.npy```
 
 **Confidence thresholding:**
-```ludwig visualize --visualization confidence_thresholding --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results/mnist_base_run_0/label_probabilities.csv results/mnist_base_run_1/label_probabilities.csv```
+```ludwig visualize --visualization confidence_thresholding --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results\mnist_base_run_0\label_probabilities.csv results\mnist_base_run_1\label_probabilities.csv```
 
 **ROC Curves:**
-```ludwig visualize --visualization roc_curves --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results/mnist_base_run_0/label_probabilities.csv results/mnist_base_run_1/label_probabilities.csv```
+```ludwig visualize --visualization roc_curves --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results\mnist_base_run_0\label_probabilities.csv results\mnist_base_run_1\label_probabilities.csv```
 
 **Calibration plot (Multiclass) + Brier Score:**
-```ludwig visualize --visualization calibration_multiclass --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results/mnist_base_run_0/label_probabilities.csv results/mnist_base_run_1/label_probabilities.csv```
+```ludwig visualize --visualization calibration_multiclass --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth mnist_dataset_testing.hdf5 --field label --probabilities results\mnist_base_run_0\label_probabilities.csv results\mnist_base_run_1\label_probabilities.csv```
 
 **Frequency vs F1 Score:**
-```ludwig visualize --visualization frequency_vs_f1 --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth_metadata mnist_dataset_training.json --field label --top_n_classes 10 --test_statistics results/mnist_base_run_0/test_statistics.json --ground_truth_metadata mnist_dataset_training.json```
+```ludwig visualize --visualization frequency_vs_f1 --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth_metadata mnist_dataset_training.json --field label --top_n_classes 10 --test_statistics results\mnist_base_run_0\test_statistics.json --ground_truth_metadata mnist_dataset_training.json```
 
