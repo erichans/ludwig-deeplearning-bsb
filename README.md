@@ -84,3 +84,8 @@ curl http://0.0.0.0:8000/predict -X POST -F 'ACHADO=Inadequação da pesquisa de
 
 ```ludwig visualize --visualization frequency_vs_f1 --model_names mnist_base_run_0 mnist_base_run_1 --ground_truth_metadata mnist_dataset_training.json --field label --top_n_classes 10 --test_statistics results\mnist_base_run_0\test_statistics.json --ground_truth_metadata mnist_dataset_training.json```
 
+Contatos:
+
+Eric Hans <erichans@gmail.com>
+
+Alexandre Vaz <alexandre.vaz@gmail.com>
