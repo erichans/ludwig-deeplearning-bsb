@@ -1,0 +1,40 @@
+preprocessing:
+    lower: True
+    word_tokenizer: portuguese_tokenize
+
+input_features:
+  -
+    name: Enunciado
+    type: text
+    level: word
+    encoder: rnn
+    cell_type: lstm
+    num_layers: 2
+    bidirectional: True
+    attention: luong
+    dropout: true
+  -
+    name: Tema
+    type: category
+    representation: sparse
+  -
+    name: Subtema
+    type: category    
+    representation: sparse
+
+combiner:
+  type: concat
+    
+output_features:
+  -
+    name: Area
+    type: category
+    top_k: 10
+    #dropout: true
+    #regularize: true
+    #norm: layer
+
+training:
+    validation_field: Area
+    validation_measure: accuracy
+    early_stop: 15
