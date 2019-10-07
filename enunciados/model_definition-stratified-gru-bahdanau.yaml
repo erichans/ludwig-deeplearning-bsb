@@ -1,0 +1,29 @@
+preprocessing:
+    lower: True
+    word_tokenizer: portuguese_tokenize
+    stratify: Area
+
+input_features:
+  -
+    name: Enunciado
+    type: text
+    level: word
+    encoder: rnn
+    cell_type: gru
+    num_layers: 2
+    bidirectional: True
+    attention: bahdanau
+    dropout: true
+    
+output_features:
+  -
+    name: Area
+    type: category
+    top_k: 10
+
+training:
+    batch_size: 128
+    dropout_rate: 0.5
+    validation_field: Area
+    validation_measure: accuracy
+    early_stop: 15
