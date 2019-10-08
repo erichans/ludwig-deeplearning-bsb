@@ -1,3 +1,8 @@
+**Caderno no Google Colab com todos os passos abaixo:**
+
+https://colab.research.google.com/drive/1QGMx89fWcamS6zeM_xNTrUVOlIlECmaN
+
+
 **Para instalar o Uber Ludwig a partir do fonte do Github, execute o comando abaixo:**
 ```
 pip install https://github.com/erichans/ludwig/archive/master.zip
